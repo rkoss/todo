@@ -1,4 +1,8 @@
 <?php
+umask(0000);
+
+defined('APPLICATION_DEBUG') or define('APPLICATION_DEBUG', getenv('APPLICATION_DEBUG') === '1'? true : false);
+defined('APPLICATION_ENV') or define('APPLICATION_ENV', getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'dev');
 
 use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +21,7 @@ $apcLoader->register(true);
 require_once __DIR__.'/../app/AppKernel.php';
 //require_once __DIR__.'/../app/AppCache.php';
 
-$kernel = new AppKernel('prod', false);
+$kernel = new AppKernel(APPLICATION_ENV, APPLICATION_DEBUG);
 $kernel->loadClassCache();
 //$kernel = new AppCache($kernel);
 

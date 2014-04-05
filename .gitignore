@@ -10,3 +10,8 @@
 /bin/
 /composer.phar
 /web/.htaccess
+/.idea/
+/web/css/*
+!/web/css/.empty
+/web/js/*
+!/web/js/.empty
