@@ -4,6 +4,10 @@ imports:
 #framework:
 #    validation:
 #        cache: apc
+framework:
+    router:
+        strict_requirements: null
+
 
 #doctrine:
 #    orm:
@@ -21,5 +25,3 @@ monolog:
             type:  stream
             path:  "%kernel.logs_dir%/%kernel.environment%.log"
             level: debug
-        console:
-            type:  console

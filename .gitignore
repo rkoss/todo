@@ -15,3 +15,5 @@
 !/web/css/.empty
 /web/js/*
 !/web/js/.empty
+/web/assetic/*
+!/web/assetic/.empty
